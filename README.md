@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+🔧 1. Konsep Website
+Nama proyek: M2M Sticker
+Jenis website: E-commerce khusus penjualan stiker
+Fitur utama:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Katalog produk stiker (dengan gambar dan deskripsi)
 
-## Available Scripts
+Kemungkinan sistem login (untuk admin atau user)
 
-In the project directory, you can run:
+Halaman detail produk
 
-### `npm start`
+Kemungkinan checkout/keranjang
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+🧱 2. Struktur Halaman (Kerangka UI)
+Berikut adalah kerangka dasar halaman:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Home Page: Banner, daftar kategori, produk unggulan
 
-### `npm test`
+Product Listing Page: Grid/list produk dengan filter & pencarian
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Product Detail Page: Gambar besar, deskripsi, tombol "Beli"
 
-### `npm run build`
+Cart Page: Daftar produk yang dipilih, total harga
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Login/Register Page (jika diperlukan)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Admin Panel (opsional): Manajemen produk, pesanan
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+🗄️ 3. Skema Database Sederhana (MySQL contoh)
+sql
+Copy
+Edit
+TABEL: users
+- id (PK)
+- username
+- password_hash
+- email
+- role (admin/user)
 
-### `npm run eject`
+TABEL: products
+- id (PK)
+- name
+- description
+- price
+- image_url
+- category_id (FK)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+TABEL: categories
+- id (PK)
+- name
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+🏗️ 4. Arsitektur Sistem
+Frontend: React.js atau Vue.js
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Backend: Node.js + Express / Laravel / Django
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Database: MySQL / PostgreSQL
 
-## Learn More
+Storage: Gambar produk disimpan di Cloud / lokal
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Deployment: VPS / Hosting + CI/CD GitHub Actions
